@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Arial', sans-serif;
+}
+
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    /* Let clicks pass through to canvas by default */
+}
+
+/* Spaceship Scene UI */
+#spaceship-ui {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/textures/spaceship.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    pointer-events: auto;
+}
+
+#record-player-hitbox {
+    position: absolute;
+    /* Adjust these values based on where the record player is in the image */
+    top: 82%;
+    left: 75%;
+    width: 10%;
+    height: 15%;
+    cursor: pointer;
+    /* border: 2px solid rgba(0, 255, 255, 0.3); Removed debug border */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+#record-player-hitbox:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 15px #00ffff;
+}
+
+#record-player-label {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#record-player-hitbox:hover #record-player-label {
+    opacity: 1;
+}
+
+/* Galaxy Scene UI */
+#galaxy-ui {
+    display: none;
+    pointer-events: none;
+}
+
+/* ... Galaxy UI styles will go here ... */
+
+/* Concert Scene UI */
+#concert-ui {
+    display: none;
+    pointer-events: none;
+}
+
+/* ... Concert UI styles will go here ... */
